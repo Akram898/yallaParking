@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+    <title>Places Search Box</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #my-input-searchbox {
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16),
+          0 0 0 1px rgba(0, 0, 0, 0.08);
+        font-size: 15px;
+        border-radius: 3px;
+        border: 0;
+        margin-top: 10px;
+        width: 270px;
+        height: 40px;
+        text-overflow: ellipsis;
+        padding: 0 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <input
+      id="my-input-searchbox"
+      type="text"
+      placeholder="Autocomplete Widget"
+    />
+    <div id="map"></div>
+    <!-- Replace the value of the key parameter with your own API key. -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiVuUod-GgunpI7milc5_nCv0Vp44U2GU&libraries=places"></script>
+    <script>
+      // This example adds a search box to a map, using the Google Place Autocomplete
+      // feature. People can enter geographical searches. The search box will return a
+      // pick list containing a mix of places and predicted search terms.
+
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+      function initAutocomplete() {
+        var map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 11,
+          center: { lat: 25.2048, lng: 55.2708 },
+          disableDefaultUI: true,
+        });
+
+        var marker = new google.maps.Marker({
+          position: { lat: 25.1124, lng: 55.139 },
+          map: map,
+        });
+        var infoWindow = new google.maps.InfoWindow({
+          content: "<h1>Parking not free</h1>",
+        });
+        marker.addListener("click", function () {
+          infoWindow.open(map, marker);
+        });
+
+        var marker = new google.maps.Marker({
+          position: { lat: 25.1988, lng: 55.2796 },
+          map: map,
+          icon: "img/new-64.png",
+        });
+
+        var marker = new google.maps.Marker({
+          position: { lat: 25.1181, lng: 55.2006 },
+          map: map,
+          icon: "img/new-64.png",
+        });
+        var marker = new google.maps.Marker({
+          position: { lat: 25.1514, lng: 55.2508 },
+          map: map,
+          icon: "img/new-64.png",
+        });
+        var marker = new google.maps.Marker({
+          position: { lat: 25.2788, lng: 55.3309 },
+          map: map,
+          icon: "img/new-64.png",
+        });
+        var marker = new google.maps.Marker({
+          position: { lat: 25.2489, lng: 55.3061 },
+          map: map,
+          icon: "img/new-64.png",
+        });
+
+        // Create the search box and link it to the UI element.
+        var input = document.getElementById("my-input-searchbox");
+        var autocomplete = new google.maps.places.Autocomplete(input);
+        map.controls[google.maps.ControlPosition.TOP_CENTER].push(input);
+        var marker = new google.maps.Marker({
+          map: map,
+        });
+
+        // Bias the SearchBox results towards current map's viewport.
+        autocomplete.bindTo("bounds", map);
+        // Set the data fields to return when the user selects a place.
+        autocomplete.setFields(["address_components", "geometry", "name"]);
+
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        autocomplete.addListener("place_changed", function () {
+          var place = autocomplete.getPlace();
+          if (!place.geometry) {
+            console.log("Returned place contains no geometry");
+            return;
+          }
+          var bounds = new google.maps.LatLngBounds();
+          marker.setPosition(place.geometry.location);
+
+          if (place.geometry.viewport) {
+            // Only geocodes have viewport.
+            bounds.union(place.geometry.viewport);
+          } else {
+            bounds.extend(place.geometry.location);
+          }
+          map.fitBounds(bounds);
+        });
+      }
+      document.addEventListener("DOMContentLoaded", function (event) {
+        initAutocomplete();
+      });
+    </script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiVuUod-GgunpI7milc5_nCv0Vp44U2GU&libraries=places&callback=initAutocomplete"
+      async
+      defer
+    ></script>
+  </body>
+</html>

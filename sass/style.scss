@@ -1,0 +1,387 @@
+@import "config";
+@import "restaurants";
+@import "orders";
+@import "custsupport";
+@import "about";
+@import "businesses";
+@import "chefs";
+@import "form";
+@import "cart";
+html {
+  scroll-behavior: smooth;
+  font-family: "Libre Franklin", sans-serif;
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Lato", sans-serif;
+  color: #505962;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*---------- Navigation---------------*/
+#top-nav {
+  color: wheat;
+  font-size: 14px;
+  padding: 4px;
+  background-color: $primary-color;
+
+  .fine {
+    padding-left: 19%;
+    color: white;
+  }
+  a {
+    padding-right: 25px;
+    color: white;
+    &:hover {
+      color: wheat;
+    }
+  }
+  .signup {
+    padding: 0 150px 0 25px;
+  }
+}
+//*************************
+.active {
+  color: white !important;
+}
+.btn {
+  text-shadow: 0.1rem 0.1rem 0.7rem black !important;
+  text-align: center;
+  &:hover {
+    background-color: #fff !important;
+    transition: all 0.6s !important;
+    color: $primary-color !important;
+    text-shadow: 0.1rem 0.1rem 0.7rem black !important;
+  }
+}
+//*************Second Nav************
+#org-nav {
+  transition: all 0.4s;
+  background-color: rgba(0, 0, 0, 0) !important;
+  li {
+    padding-left: 10px;
+  }
+  .nav-link {
+    letter-spacing: 1px;
+    font-size: 15px;
+
+    color: #e0e0e0a6;
+    &:active,
+    &:hover {
+      color: #fff;
+    }
+  }
+  .btn {
+    color: #e0e0e0a6;
+
+    border: 1px solid #e0e0e0a6;
+    padding: 5px 8px;
+  }
+}
+.navbar-brand {
+  img {
+    width: 80%;
+    padding-right: 15%;
+  }
+  .logo-txt {
+    font-family: "Courgette", cursive;
+    color: whitesmoke;
+    font-size: 25px;
+  }
+}
+
+//-----------End NavBar-------------------------------------
+
+//-----------Banner-------------------------------------
+
+.text-primary {
+  color: $primary-color;
+}
+#home {
+  background: url(../img/landing.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  overflow-x: hidden;
+}
+#shadow {
+  background: rgba(13, 14, 15, 0.5);
+}
+// .img-contain {
+//   background: rgba(13, 14, 15, 0.5);
+// }
+
+@keyframes yourAnimation {
+  0% {
+    transform: rotate(0) translateY(-40%);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0) translateY(0);
+    opacity: 01;
+  }
+}
+.site-content {
+  .site-title {
+    animation: yourAnimation 1s forwards 0.5s ease-in;
+    font-size: 40px;
+
+    line-height: 40px;
+    color: #fff;
+    padding-top: 12%;
+    margin-bottom: 4%;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    text-shadow: 0.1rem 0.1rem 0.7rem black;
+  }
+
+  .btn-order {
+    animation: yourAnimation 2s forwards 0s ease;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 0;
+
+    letter-spacing: 5;
+    text-shadow: 0.1rem 0.1rem 0.7rem black;
+    text-align: center;
+    padding: 10px 25px;
+    margin-bottom: 12%;
+  }
+
+  .btn-down {
+    margin: 0 0 2% 0;
+    border-radius: 50%;
+  }
+}
+
+//===============End Banner-----------------------------
+
+// ----------------------Start Portfolio Page-----------------------------
+
+// ----------------------Start Portfolio Page-----------------------------
+#portfolio {
+  background: #f7f7f7;
+  padding: 0 10%;
+  h2 {
+    padding: 15% 0 4% 0;
+    font-family: "Courgette", cursive;
+    color: $primary-color;
+    font-size: 28px;
+  }
+  h1 {
+    font-size: 28px;
+    text-transform: uppercase;
+    padding-bottom: 2px;
+    color: $secondary-color;
+  }
+  hr {
+    border-top: 2px solid $primary-color;
+
+    padding-bottom: 2%;
+    width: 15%;
+  }
+  p {
+    padding-bottom: 4%;
+    font-weight: 400;
+  }
+  .btn {
+    margin-bottom: 7%;
+
+    color: #fff;
+    background-color: $primary-color;
+    border-radius: 0;
+    font-size: 15px;
+    padding: 10px 25px;
+    border-color: $primary-color;
+  }
+
+  img {
+    width: 250px;
+    height: 400px;
+    margin: 15% 0 18% 0;
+    padding-left: 20px;
+  }
+}
+
+// -----------------------End Portfolio Page----------------------------
+
+// -----------------------Start Services Section----------------------------
+
+#services-section {
+  margin: 5% 0;
+  padding: 0 8%;
+  img {
+    width: 100%;
+    height: 400px;
+    margin: 5% 0 10% 0;
+  }
+  h1 {
+    padding: 10% 0 5px 0;
+    font-size: 28px;
+    text-transform: uppercase;
+    padding-bottom: 2px;
+  }
+  hr {
+    border-top: 2px solid $primary-color;
+
+    padding-bottom: 2%;
+    width: 15%;
+  }
+  p {
+    padding-bottom: 4%;
+    font-weight: 400;
+  }
+  .btn {
+    margin-bottom: 7%;
+    color: #fff;
+    background-color: $primary-color;
+    border-radius: 0;
+    font-size: 15px;
+    padding: 10px 25px;
+    border-color: $primary-color;
+  }
+}
+
+//**************End Services****************************
+
+//**************Start About*********************************
+#about {
+  background: #f7f7f7;
+
+  padding: 5% 8%;
+  img {
+    width: 100%;
+    height: 400px;
+    padding: 5% 0 10% 0;
+  }
+  h1 {
+    padding: 10% 0 5px 0;
+    font-size: 28px;
+    text-transform: uppercase;
+    padding-bottom: 2px;
+  }
+  hr {
+    border-top: 2px solid $primary-color;
+
+    padding-bottom: 2%;
+    width: 15%;
+  }
+  p {
+    padding-bottom: 4%;
+    font-weight: 400;
+  }
+  .btn {
+    color: #fff;
+    background-color: $primary-color;
+    border-radius: 0;
+    font-size: 15px;
+    padding: 10px 25px;
+    border-color: $primary-color;
+  }
+  .btn-up {
+    border-radius: 50%;
+    padding: 10px 10px;
+    margin-bottom: -150px;
+  }
+}
+//**************End About*********************************
+
+//*****************End curosel****************************
+
+footer {
+  width: 100%;
+  margin: 0;
+  padding: 8% 5% 4% 5%;
+  background: #1a1a1a;
+  color: #fff;
+  h6 {
+    padding-left: 4%;
+    font-weight: 200;
+    font-size: 15px;
+    color: #fff;
+  }
+  a {
+    color: rgb(219, 219, 219);
+    &:hover {
+      text-decoration: none;
+
+      color: #fff;
+    }
+  }
+  i {
+    margin: 4% 5px 1% 0;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #333333;
+    background-color: #fff;
+    &:hover {
+      color: #fff;
+      background-color: $primary-color;
+      @include easeOut;
+    }
+  }
+  h5 {
+    font-size: 15px;
+    padding-top: 2%;
+
+    font-weight: 40;
+  }
+}
+
+@import "mobile";
+
+//--------------Chef Gallery**********************
+
+// .img-contain-chefs {
+//   .btn {
+//     margin-bottom: 2%;
+//   }
+// }
+// #chefs {
+//   border: #f7f7f7 4px solid;
+//   img {
+//     border: 5px solid $primary-color;
+
+//     &:hover {
+//       opacity: 0.5;
+//       @include easeOut;
+//     }
+//   }
+// }
+
+/*Cookie Consent Begin*/
+.cookie-banner {
+  position: fixed;
+  bottom: 40px;
+  left: 10%;
+  right: 10%;
+  width: 80%;
+  padding: 5px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #eee;
+  border-radius: 5px;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+.close {
+  height: 20px;
+  background-color: #777;
+  border: none;
+  color: white;
+  border-radius: 2px;
+  cursor: pointer;
+}
+/*Cookie Consent End*/

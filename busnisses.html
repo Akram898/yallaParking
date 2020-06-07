@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Css Coming From Sass-->
+
+    <link rel="stylesheet/scss" type="text/css" href="sass/style.scss" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="img/new-64.png" />
+
+    <!--BootStrap 4 Css-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!--Font Awesome-->
+    <script
+      src="https://kit.fontawesome.com/d44b24acad.js"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<link rel="stylesheet" href="css/hover.css">
+
+    <title>YallaParking</title>
+
+
+
+ <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 400px;
+        width: 1200px;
+       
+      }
+     
+      #my-input-searchbox {
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16),
+          0 0 0 1px rgba(0, 0, 0, 0.08);
+        font-size: 20px;
+        border-radius: 3px;
+        border: 0;
+        margin-top: 10px;
+        width: 350px;
+        height: 50px;
+        text-overflow: ellipsis;
+        padding: 0 1em;
+      }
+
+
+     
+
+
+    </style>
+
+
+  </head>
+
+  <body data-spy="scroll" data-target="#navbarResponsive" id="businesses-body">
+    
+
+<nav class="navbar navbar-expand-md navbar-light bg-light" id="org-nav">
+  <div class="container">
+  <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""> <span class="logo-txt"></span></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"><i class="fa fa-bars" style="color: white;"></i></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item ">
+        <a class="nav-link " href="/index.html">Popular Areas <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about.html">Popular Towers</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/restaurants.html">Parking Operators</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Download App</a>
+      </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="/support_help.html" target="_blank"><i class="fas fa-sign-in-alt"></i> Log In</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/orders.html" target="_blank">
+             Register
+            </a>
+      </li>
+    </ul>
+  </div>
+  </div>
+</nav>
+
+      <!--***********************************Start BAnner Section*******************************************************-->
+  <section id="home-map">
+  <p> <input
+      id="my-input-searchbox"
+      type="text"
+      placeholder="Where do you want to Park...."
+    /></p>
+     
+    <div id="map" class="container-fluid"></div>
+    </section>
+
+    <!--***********************************End عAbout*******************************************************-->
+
+
+
+
+    <!--***********************************Start How it Works*******************************************************-->
+
+
+ <section id="howitworks-businesses">
+      <div class="container-fluid text-center">
+        <h2>Don't waste your time looking for a place to park</h2>
+        <p class="para">Search our listings and find the perfect spot near your home or office.</p>
+        <div class="row">
+          
+          <div class="col-md-4 text-center" data-aos="fade-right"  data-aos-duration="1500">
+          
+             <div class="how-item">
+            
+           <img src="img/mapIllustration@2x.png" alt="">
+           <h1 class="">
+             Search For Parking
+            </h1>
+           <p>Search more than 700 parking spaces
+across Dubai</p>
+        </div>
+          </div>
+
+
+         
+           <div class="col-md-4 text-center" data-aos="fade-down"  data-aos-duration="2000">
+            <div class="how-item">
+            
+           <img src="img/bookIllustration@2x.png" alt="">
+             <h1 class="h1-big-text">
+            Book Parking
+            </h1>
+            
+            <p>
+                  Book & Pay online using our secure
+booking system.   </p>
+          
+             </div>
+
+          </div>
+        
+           <div class="col-md-4 text-center" data-aos="fade-left"  data-aos-duration="2800">
+           <div class="how-item">
+            
+           <img src="img/carIllustration@2x.png" alt="">
+           <h1 class="h1-big-text">
+             Park Your Car
+            </h1>
+            <p>
+                 Receive your access card in 24 hours & park.
+It really is that simple.      </p>
+          
+             </div>
+          </div>
+
+          
+        </div>
+      </div>
+   
+    </section>
+
+    <!--***********************************End عAbout*******************************************************-->
+<hr>
+
+<section class="section-2">
+<div class="container text-center">
+    <h1 class="heading-1">Our Parking Partners</h1>
+  
+    <p>We are proudly partnered with the following companies</p>
+</div>
+<!--Carousel Wrapper-->
+<div id="multi-item-example" class="carousel slide carousel-multi-item " data-interval="3500" data-ride="carousel">
+
+    <!--Controls-->
+    <!-- <div class="controls-top">
+        <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
+        <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fas fa-chevron-right"></i></a>
+    </div> -->
+    <!--/.Controls-->
+
+    <!--Indicators-->
+
+    
+    <!-- <ol class="carousel-indicators" >
+        <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+        <li data-target="#multi-item-example" data-slide-to="1"></li>
+
+    </ol>   -->
+  
+
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+
+        <!--First slide-->
+        <div class="carousel-item active">
+
+            <div class="col-md-3" style="float:left" data-aos="fade-right"  data-aos-duration="1900">
+               
+                    <img class="card-img-top"
+                        src="img/deyaar.png"
+                        alt="Card image cap">
+               
+            </div>
+
+            <div class="col-md-3" style="float:left" data-aos="fade-up"  data-aos-duration="1900">
+                 <img class="card-img-top"
+                        src="img/TheNational.png"
+                        alt="Card image cap">
+            </div>
+
+            <div class="col-md-3" style="float:left" data-aos="fade-bottom"  data-aos-duration="1500">
+                <img class="card-img-top"
+                        src="img/dubizzle.png"
+                        alt="Card image cap">
+            </div>
+
+            <div class="col-md-3" style="float:left" data-aos="fade-left"  data-aos-duration="2500">
+                <img class="card-img-top"
+                        src="img/doubletree.png"
+                        alt="Card image cap">
+            </div>
+
+        </div>
+        <!--/.First slide-->
+
+        <!--Second slide-->
+        <div class="carousel-item">
+
+            <div class="col-md-3" style="float:left">
+                 <img class="card-img-top"
+                        src="img/Dubaieye.png"
+                        alt="Card image cap">
+            </div>
+
+            <div class="col-md-3" style="float:left">
+                <img class="card-img-top"
+                        src="img/HomeToHome.png"
+                        alt="Card image cap">
+            </div>
+
+            <div class="col-md-3" style="float:left">
+               <img class="card-img-top"
+                        src="img/doubletree.png"
+                        alt="Card image cap">
+            </div>
+
+            <div class="col-md-3" style="float:left">
+                 <img class="card-img-top"
+                        src="img/wamda.png"
+                        alt="Card image cap">
+            </div>
+
+        </div>
+        <!--/.Second slide-->
+
+
+
+    </div>
+    <!--/.Slides-->
+
+</div>
+<!--/.Carousel Wrapper-->
+</section>
+
+    <!--***********************************End عAbout*******************************************************-->
+<hr>
+
+
+<section class="section-3">
+<div class="container text-center">
+    <h1 class="heading-1">Popular Places in Dubai</h1>
+  
+    <p>Dubai Parking Hot Spots</p>
+</div>
+<!--Carousel Wrapper-->
+<div id="multi-item-example" class="carousel slide carousel-multi-item " data-interval="3500" data-ride="carousel">
+
+    <!--Controls-->
+    <!-- <div class="controls-top">
+        <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
+        <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fas fa-chevron-right"></i></a>
+    </div> -->
+    <!--/.Controls-->
+
+    <!--Indicators-->
+
+    
+    <!-- <ol class="carousel-indicators" >
+        <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+        <li data-target="#multi-item-example" data-slide-to="1"></li>
+
+    </ol>   -->
+  
+
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+
+        <!--First slide-->
+        <div class="carousel-item active">
+
+            <div class="col-md-3" style="float:left">
+               
+                   <div class="hovereffect container">
+                      
+        <img class="img-responsive" src="img/Dubai_HERO.jpg" alt="">
+         <div class="centered">Dubai Marina</div>
+        <div class="overlay">
+           <h2>Area 1</h2>
+           <a class="info" href="#">Park here</a>
+        </div>
+    </div>
+               
+            </div>
+
+            <div class="col-md-3" style="float:left">
+                <div class="hovereffect container">
+                      
+        <img class="img-responsive" src="img/burj.jpg" alt="">
+          <div class="centered">Burj Al Arab</div>
+        <div class="overlay">
+           <h2>Area 2</h2>
+           <a class="info" href="#">Park here</a>
+        </div>
+    </div>
+            </div>
+
+            <div class="col-md-3" style="float:left">
+                <div class="hovereffect container">
+                      
+        <img class="img-responsive" src="img/img2.jpg" alt="">
+        <div class="centered">Down Town</div>
+        <div class="overlay">
+           <h2>Area 3</h2>
+           <a class="info" href="#">Park here</a>
+        </div>
+    </div>
+            </div>
+
+            <div class="col-md-3" style="float:left">
+                <div class="hovereffect container">
+                      
+        <img class="img-responsive" src="img/atlantas.webp" alt="">
+        <div class="centered">Atlantis</div>
+        <div class="overlay">
+           <h2>Area 4</h2>
+           <a class="info" href="#">Park here</a>
+        </div>
+    </div>
+            </div>
+
+        </div>
+        <!--/.First slide-->
+
+        <!--Second slide-->
+        <div class="carousel-item">
+
+            <div class="col-md-3" style="float:left">
+                <div class="hovereffect container">
+                      
+        <img class="img-responsive" src="img/Dubai_HERO.jpg" alt="">
+         <div class="centered">Dubai Marina</div>
+        <div class="overlay">
+           <h2>Area 5</h2>
+           <a class="info" href="#">Park here</a>
+        </div>
+    </div>
+            </div>
+
+            <div class="col-md-3" style="float:left">
+              <div class="hovereffect container">
+                      
+        <img class="img-responsive" src="img/img2.jpg" alt="">
+         <div class="centered">Down Town</div>
+        <div class="overlay">
+           <h2>Area 6</h2>
+           <a class="info" href="#">Park here</a>
+        </div>
+    </div>
+            </div>
+
+            <div class="col-md-3" style="float:left">
+             <div class="hovereffect container">
+                      
+        <img class="img-responsive" src="img//burj.jpg" alt="">
+        <div class="centered">Burj al Arab</div>
+        <div class="overlay">
+           <h2>Area 7</h2>
+           <a class="info" href="#">Park Here</a>
+        </div>
+            </div>
+          </div>
+            <div class="col-md-3" style="float:left">
+                <div class="hovereffect container">
+                      
+        <img class="img-responsive" src="img/atlantas.webp" alt="">
+        <div class="centered">Atlantis</div>
+        <div class="overlay">
+           <h2>Area 8</h2>
+           <a class="info" href="#">Park here</a>
+        </div>
+            </div>
+
+        </div>
+      
+        <!--/.Second slide-->
+
+
+
+    </div>
+    <!--/.Slides-->
+
+</div>
+<!--/.Carousel Wrapper-->
+</section>
+
+
+
+    <!--***********************************End عAbout*******************************************************-->
+
+
+<section id="testimonial">
+<div class="container-fluid text-center">
+  <h1>Our Community</h1>
+  <p>It's always good to hear what others think, check out these reviews from the awesome users & business partners we work with!</p>
+
+
+
+<div class="card-deck">
+  <div class="card" data-aos="fade-left"  data-aos-duration="2000">
+    
+    <div class="card-body">
+      
+      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae dolor magnam ab officiis laborum qui doloremque dolores saepe voluptate ipsa?</p>
+      <p class="card-text"><small class="text-muted">-Ahmed</small></p>
+    </div>
+    <img class="card-img-top" src="img/MUNAD_AKBARI.jpg" alt="Card image cap">
+  </div>
+  <div class="card" data-aos="fade-down"  data-aos-duration="2000">
+    
+    <div class="card-body">
+      
+     <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae dolor magnam ab officiis laborum qui doloremque dolores saepe voluptate ipsa?</p>
+      <p class="card-text"><small class="text-muted">-Emily</small></p>
+  
+    </div>
+    <img class="card-img-top" src="img/STEPHANIE_WILLIAMS.jpg" alt="Card image cap">
+  </div>
+  <div class="card" data-aos="fade-right"  data-aos-duration="2000">
+
+    <div class="card-body">
+      <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione, ab!</p>
+      <p class="card-text"><small class="text-muted">-Omar</small></p>
+    </div>
+        <img class="card-img-top" src="img/ZAK_ILDUCELIBIA.jpg" alt="Card image cap">
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+</div>
+</section>
+   
+
+    <!--*******************************************End-section**********************************-->
+<section id="as-featured">
+<div class="container-fluid text-center">
+  <h1>As featured in</h1>
+  <img src="img/Dubaieye.png" alt="">
+  <img src="img/Entrepreneur.png" alt="">
+  <img src="img/wamda.png" alt="">
+  <img src="img/doubletree.png" alt="">
+ 
+
+</div>
+</section>
+
+
+
+
+
+
+ <section id="howitworks-2">
+      <div class="container-fluid text-center">
+        <h2>How Listing Works</h2>
+        <p class="para">Help out a neighbour in need by easily adding your parking space. We take care of the access cards, deposits, confirmation & payments.</p>
+        <div class="row">
+          
+          <div class="col-md-4 text-center" data-aos="fade-right"  data-aos-duration="1500">
+          
+             <div class="how-item">
+            
+          <i class="fas fa-map-marked-alt"></i>
+           <h1 class="">
+             List Parking
+            </h1>
+           <p>  Add your unused space & choose a price.</p>
+        </div>
+          </div>
+
+
+         
+           <div class="col-md-4 text-center" data-aos="fade-down"  data-aos-duration="2000">
+            <div class="how-item">
+            
+          <i class="fas fa-check-circle"></i>
+             <h1 class="h1-big-text">
+          Confirm
+            </h1>
+            
+            <p>Confirm a convenient time for one of our team to pick up your access card when you receive a booking.
+               </p>
+          
+             </div>
+
+          </div>
+        
+           <div class="col-md-4 text-center" data-aos="fade-left"  data-aos-duration="2800">
+           <div class="how-item">
+            
+           <i class="fas fa-money-bill-wave"></i>
+           <h1 class="h1-big-text">
+           Earn
+            </h1>
+            <p>
+               Earn money each Month from your unused space, deposited directly to your account.      </p>
+          
+             </div>
+          </div>
+
+          
+        </div>
+      </div>
+   
+    </section>
+
+    <!--************last section***************************-->
+<section id="last">
+<div class="container-fluid text-left shadow">
+  <h1>List Your Parking Space</h1>
+  <p>Join our growing community of over 700 parking spaces & start earning today.</p>
+  <a href="" class="btn">Lets Get Started</a>
+</div>
+</section>
+ <!--************Ebd last section***************************-->
+
+
+<section id="again-footer">
+   <div class="container-fluid">
+<div class="row">
+ 
+  <div class="col-md-2 col-style"> <img src="img/logo.png" alt="">
+  <p>Rent an unused space from a neighbour in your building or area, OR, earn money renting yours out to a neighbour in need.</p>
+  </div>
+
+  
+  <div class="col-md-2 col-style">
+    <h2>Popular Towers</h2>
+   <p>> <a href="">Burlington Tower</a></p> 
+   <p>> <a href="">Bay Tower</a></p> 
+  </div>
+
+
+  <div class="col-md-2 col-style">
+     <h2>Popular Areas</h2>
+   <p>> <a href="">Dubai Marina</a></p> 
+ 
+  </div>
+  <div class="col-md-2 col-style">
+     <h2>Helpful Links</h2>
+   <p>> <a href="">FAQ</a></p> 
+   <p>> <a href="">How to use</a></p> 
+  </div>
+  <div class="col-md-2 col-style">
+ <h2>Contact Us</h2>
+   <p>Address : </p> 
+   <p>Phone : </p> 
+   <p>E-mail : </p> 
+   </div>
+</div>
+<hr>
+<p style="text-align: center;"> &copy; YallaParking</p>
+</div>
+
+
+</section>
+
+   
+
+    <!--************Footer***************************-->
+
+
+
+
+
+    <!--************Footer***************************-->
+
+
+
+    <!--JavaScrip Main-->
+    <script src="js/main.js"></script>
+
+    <!--BootStrap 4 JavaScrip-->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+<script>
+    
+//       function initMap() {
+//         //Map options
+//        var options = {
+//          zoom:11 ,
+//          center:{lat: 25.2048, lng: 55.2708}
+//        }
+// // new map
+// var map = new google.maps.Map(document.getElementById('map'), options);
+     
+//       //Add marker
+//      var marker = new google.maps.Marker({
+//        position:{lat:25.1124, lng:55.1390}, map:map
+//      });
+// var infoWindow = new google.maps.InfoWindow({
+// content:'<h1>Parking not free</h1>'
+// })
+// marker.addListener('click', function(){
+//   infoWindow.open(map, marker)
+// })
+
+// var marker = new google.maps.Marker({
+//        position:{lat:25.1988, lng:55.2796}, map:map, icon:'img/new-64.png'
+//      });
+
+// var marker = new google.maps.Marker({
+//        position:{lat:25.1181, lng:55.2006}, map:map, icon:'img/new-64.png'
+//      });
+//      var marker = new google.maps.Marker({
+//        position:{lat:25.1514, lng:55.2508}, map:map, icon:'img/new-64.png'
+//      });
+//       var marker = new google.maps.Marker({
+//        position:{lat:25.2788, lng:55.3309}, map:map, icon:'img/new-64.png'
+//      });
+//       var marker = new google.maps.Marker({
+//        position:{lat:25.2489, lng:55.3061}, map:map, icon:'img/new-64.png'
+//      });
+  
+//       }
+      
+
+    //geocode  
+//     geocode();
+// function geocode(){
+//   var location = '22 st marina'
+//   axios.get('https://maps.googleapis.com/maps/api/gepcode/json',
+//    {params:
+//     {address: location,
+//     key: 'AIzaSyAWAqGkV9Nc6Vt7F7Q7i10XNVoRpY6iTEI'  
+//     }
+//     })
+//     .then(function(response){
+// console.log(response);
+//     })
+//     .catch()(function(error){
+//       console.log(error);
+//     })
+// }
+
+
+
+
+//       function initAutocomplete() {
+        
+//         // Create the search box and link it to the UI element.
+//         var input = document.getElementById('pac-input');
+//         var searchBox = new google.maps.places.SearchBox(input);
+//         map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+//         // Bias the SearchBox results towards current map's viewport.
+//         map.addListener('bounds_changed', function() {
+//           searchBox.setBounds(map.getBounds());
+//         });
+
+//       }
+
+
+// function initialize() {
+//    initMap();
+//    initAutocomplete();
+// }
+
+    // </script>
+
+
+
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWAqGkV9Nc6Vt7F7Q7i10XNVoRpY6iTEI&callback=initialize"
+    async defer></script>  -->
+
+
+
+
+
+
+
+
+
+
+
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiVuUod-GgunpI7milc5_nCv0Vp44U2GU&libraries=places"></script>
+    <script>
+      // This example adds a search box to a map, using the Google Place Autocomplete
+      // feature. People can enter geographical searches. The search box will return a
+      // pick list containing a mix of places and predicted search terms.
+
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+      function initAutocomplete() {
+        var map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 11,
+          center: { lat: 25.2048, lng: 55.2708 },
+          disableDefaultUI: true,
+        });
+
+        var marker = new google.maps.Marker({
+          position: { lat: 25.1124, lng: 55.139 },
+          map: map,
+        });
+        var infoWindow = new google.maps.InfoWindow({
+          content: "<h1>Parking not free</h1>",
+        });
+        marker.addListener("click", function () {
+          infoWindow.open(map, marker);
+        });
+
+        var marker = new google.maps.Marker({
+          position: { lat: 25.1988, lng: 55.2796 },
+          map: map,
+          icon: "img/new-64.png",
+        });
+
+        var marker = new google.maps.Marker({
+          position: { lat: 25.1181, lng: 55.2006 },
+          map: map,
+          icon: "img/new-64.png",
+        });
+        var marker = new google.maps.Marker({
+          position: { lat: 25.1514, lng: 55.2508 },
+          map: map,
+          icon: "img/new-64.png",
+        });
+        var marker = new google.maps.Marker({
+          position: { lat: 25.2788, lng: 55.3309 },
+          map: map,
+          icon: "img/new-64.png",
+        });
+        var marker = new google.maps.Marker({
+          position: { lat: 25.2489, lng: 55.3061 },
+          map: map,
+          icon: "img/new-64.png",
+        });
+
+        // Create the search box and link it to the UI element.
+        var input = document.getElementById("my-input-searchbox");
+        var autocomplete = new google.maps.places.Autocomplete(input);
+        map.controls[google.maps.ControlPosition.TOP_CENTER].push(input);
+        var marker = new google.maps.Marker({
+          map: map,
+        });
+
+        // Bias the SearchBox results towards current map's viewport.
+        autocomplete.bindTo("bounds", map);
+        // Set the data fields to return when the user selects a place.
+        autocomplete.setFields(["address_components", "geometry", "name"]);
+
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        autocomplete.addListener("place_changed", function () {
+          var place = autocomplete.getPlace();
+          if (!place.geometry) {
+            console.log("Returned place contains no geometry");
+            return;
+          }
+          var bounds = new google.maps.LatLngBounds();
+          marker.setPosition(place.geometry.location);
+
+          if (place.geometry.viewport) {
+            // Only geocodes have viewport.
+            bounds.union(place.geometry.viewport);
+          } else {
+            bounds.extend(place.geometry.location);
+          }
+          map.fitBounds(bounds);
+        });
+      }
+      document.addEventListener("DOMContentLoaded", function (event) {
+        initAutocomplete();
+      });
+    </script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiVuUod-GgunpI7milc5_nCv0Vp44U2GU&libraries=places&callback=initAutocomplete"
+      async
+      defer
+    ></script>
+
+
+
+
+  </body>
+</html>
